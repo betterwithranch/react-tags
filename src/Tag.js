@@ -18,6 +18,7 @@ class Tag extends Component {
   render() {
     const { props } = this;
     const label = props.tag[props.labelField];
+    const className = props.tag.className;
     const {
       connectDragSource,
       isDragging,
@@ -28,7 +29,7 @@ class Tag extends Component {
     const tagComponent = (
       <span
         style={{ opacity: isDragging ? 0 : 1 }}
-        className={props.classNames.tag}
+        className={`${props.classNames.tag} ${className}`}
         onClick={props.onTagClicked}
         onKeyDown={props.onTagClicked}>
         {label}
